@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+/* Add your custom styles below */
+* {
+  font-family: Poppins, sans-serif;
+}
+h1 {
+  font-size: 52px;
+}
+h2 {
+  font-size: 36px;
+  color: rgb(43, 43, 43);
+}
+h3 {
+  color: rgb(43, 43, 43);
+}
+p {
+  font-size: 18px;
+  color: rgb(75, 75, 75);
+}
+.container {
+  padding: 0 200px;
+  margin-top: 70px;
+}
+.flex {
+  display: flex;
+}
+
+/* Hero */
+.hero {
+  align-items: center;
+  overflow: hidden;
+}
+.image-container {
+  position: relative;
+}
+.image-container img {
+  object-fit: cover;
+}
+.about-container {
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.text-overlay {
+  text-shadow: 3px 3px 5px rgb(0, 0, 0);
+  position: absolute;
+  top: 80%;
+  left: 38%;
+}
+.text-overlay h2 {
+  color: white;
+}
+.hero .icons-container {
+  float: right;
+  margin-top: 20px;
+}
+.icons-container i {
+  padding-right: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+.project-container {
+  text-align: center;
+}
+.project-container > h2 {
+  margin-bottom: 20px;
+}
+.cards-container {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+.card {
+  max-width: 350px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+.card > .project-image {
+  background-color: rgb(255, 235, 219);
+  height: 200px;
+}
+.card-header {
+  justify-content: space-between;
+}
+.card-header,
+.card-body {
+  padding: 10px;
+}
+.card-body {
+  line-height: 20px;
+}
+.external-links > a {
+  color: black;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.contact-me {
+  background-color: rgb(255, 235, 219);
+  padding-top: 70px;
+  padding-bottom: 70px;
+  overflow: hidden;
+}
+.personal-info {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.image-container img {
+  max-width: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 1604px) {
+  .container {
+    padding: 0 70px;
+    margin-top: 50px;
+  }
+  .contact-me {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 1140px) {
+  .container {
+    padding: 0 40px;
+    flex-direction: column;
+  }
+  .about-container {
+    text-align: center;
+  }
+  .contact-me {
+    padding-top: 50px;
+    text-align: center;
+  }
+  .personal-info {
+    align-items: center;
+  }
+  .personal-info p,
+  div {
+    margin-top: 10px;
+  }
+  .contact-me .image-container {
+    display: none;
+  }
+  .card {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+    margin-top: 0px;
+  }
+  .about-container {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  .contact-me {
+    padding-bottom: 30px;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  .cards-container {
+    gap: 10px;
+  }
+}
+
+.hero .image-container {
+  animation: fade-in-left 2s ease-in-out;
+}
+.about-container {
+  animation: fade-in-right 2s ease-in-out;
+}
+
+h2,
+.card {
+  animation: fade 3s ease both;
+  animation-timeline: view();
+  animation-range: entry 50% cover 50%;
+}
+
+.personal-info {
+  animation: fade-in-left 2s ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 10%;
+}
+.image-container {
+  animation: fade-in-right 2s ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 10%;
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+    filter: blur(5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+    filter: blur(5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes fade {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
